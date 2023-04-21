@@ -1,0 +1,1 @@
+json.extract! @todo_item, :id, :title, :description, :done

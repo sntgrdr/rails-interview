@@ -1,0 +1,1 @@
+json.array! @todo_items, :id, :title, :description, :done, :todo_list_id
