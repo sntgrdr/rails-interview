@@ -1,2 +1,2 @@
-json.message "Job encolado para completar #{todo_items.count} items."
+json.message "Enqueued job. #{todo_items.count} items to complete."
 json.todo_list_id todo_list.id

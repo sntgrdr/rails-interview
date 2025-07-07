@@ -124,14 +124,14 @@ describe Api::TodoLists::TodoItemsController, type: :controller do
 
   describe 'PATCH #update' do
     context 'with valid params' do
-      let(:update_params) { { todo_item: { name: 'Updated name' } } }
+      let(:update_params) { { todo_item: { name: 'Install Rspec-rails gem' } } }
 
       it 'updates the todo item' do
         patch :update, params: { todo_list_id: todo_list_id, id: todo_item_rspec.id }.merge(update_params), format: :json
 
         expect(response).to have_http_status(:ok)
         json = JSON.parse(response.body)
-        expect(json['name']).to eq('Updated name')
+        expect(json['name']).to eq('Install Rspec-rails gem')
       end
     end
 

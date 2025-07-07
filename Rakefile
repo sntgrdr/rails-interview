@@ -4,7 +4,5 @@
 require_relative "config/application"
 require 'resque/tasks'
 
-task "resque:setup" => :environment #do
-#   Grit::Git.git_timeout = 10.minutes
-# end
+task 'resque:setup' => :environment
 Rails.application.load_tasks

@@ -14,7 +14,7 @@ module Api
       MarkAllAsCompletedJob.perform_later(todo_item_ids: todo_items.pluck(:id))
 
       respond_to do |format|
-        format.json { render json: { message: "Job encolado para completar #{todo_items.count} items.", todo_list_id: todo_list.id }, status: :accepted }
+        format.json { render json: { message: "Enqueued job. #{todo_items.count} items to complete.", todo_list_id: todo_list.id }, status: :accepted }
       end
     end
 
