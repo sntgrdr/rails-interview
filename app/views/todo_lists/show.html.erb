@@ -1,0 +1,25 @@
+<%= turbo_stream_from "todo_list_#{@todo_list.id}_progress" %>
+<%= turbo_stream_from "todo_list_#{@todo_list.id}_items" %>
+
+<%= @todo_list.name %>
+<br/><br/>
+
+<strong>Todo Items</strong>
+
+<div id='todo_progress'>
+  Completados: <%= @todo_list.todo_items.completed.count %> / <%= @todo_list.todo_items.count %>
+</div>
+
+
+<ul id='todo_items'>
+  <% @todo_list.todo_items.each do |todo_item| %>
+    <%= render partial: 'item', locals: { todo_item: todo_item } %>
+  <% end %>
+</ul>
+
+<br/>
+<%= link_to 'Add ToDo Item', new_todo_list_todo_item_path(@todo_list) %>
+<br/><br/>
+<%= link_to 'Mark all as completed', mark_all_as_completed_todo_list_path(@todo_list) %>
+<br/><br/>
+<%= link_to 'Go back', todo_lists_path %>

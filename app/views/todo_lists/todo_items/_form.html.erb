@@ -1,0 +1,10 @@
+<%= form_with model: [@todo_list, @todo_item] do |form| %>
+  <div>
+    <%= form.label :name %>
+    <%= form.text_field :name %>
+  </div>
+  <br/>
+  <%= form.submit %>
+<% end %>
+<br/>
+<%= link_to 'Go back', todo_list_path(@todo_list) %>
